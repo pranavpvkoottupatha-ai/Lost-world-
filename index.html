@@ -7,9 +7,7 @@
 <meta name="theme-color" content="#02070b">
 
 <title>THE LOST WORLD: PROJECT ZERO</title>
-
-<meta name="description"
-content="Enter THE LOST WORLD: PROJECT ZERO, a dinosaur survival adventure by SP STUDIOS.">
+<meta name="description" content="THE LOST WORLD: PROJECT ZERO — a dinosaur survival adventure by SP STUDIOS.">
 
 <style>
 * {
@@ -30,14 +28,13 @@ body {
 .poster {
   min-height: 100vh;
   min-height: 100svh;
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
   padding: 25px;
-  background: #06131c;
+  overflow: hidden;
 }
 
 .poster::before {
@@ -45,82 +42,68 @@ body {
   position: absolute;
   inset: 0;
   z-index: -2;
-
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(0, 5, 10, .94) 0%,
-      rgba(0, 5, 10, .65) 48%,
-      rgba(0, 5, 10, .2) 100%
-    ),
-    linear-gradient(
-      0deg,
-      #02070b 0%,
-      transparent 55%
-    ),
-    url("poster.jpg");
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background:
+    linear-gradient(90deg, rgba(0,5,10,.94), rgba(0,5,10,.35)),
+    linear-gradient(0deg, #02070b, transparent 65%),
+    url("poster.jpg") center / cover no-repeat;
 }
 
 .poster::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  border: 1px solid rgba(65, 193, 255, .2);
+  inset: 10px;
+  border: 1px solid rgba(75,195,255,.25);
   pointer-events: none;
+  z-index: -1;
 }
 
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
 }
 
 .studio {
+  color: #64d1ff;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 3px;
-  color: #70d5ff;
 }
 
 .status {
   font-size: 10px;
-  color: #d4e7f2;
   letter-spacing: 2px;
+  color: #d4e7f2;
 }
 
 main {
   width: 100%;
   max-width: 850px;
-  padding: 50px 0;
+  padding: 45px 0;
 }
 
 .eyebrow {
   color: #9bc7dc;
   font-size: 12px;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   margin-bottom: 18px;
 }
 
 h1 {
-  font-size: clamp(42px, 9vw, 88px);
-  line-height: .9;
-  letter-spacing: -2px;
   margin: 0;
-  text-shadow: 0 5px 25px #000;
+  font-size: clamp(42px, 9vw, 88px);
+  line-height: .92;
+  letter-spacing: -2px;
+  text-shadow: 0 5px 25px black;
 }
 
 h2 {
   color: #43c4ff;
-  font-size: clamp(20px, 5vw, 38px);
+  font-size: clamp(21px, 5vw, 38px);
   letter-spacing: 5px;
-  margin: 16px 0 25px;
+  margin: 16px 0 24px;
 }
 
 .description {
@@ -134,15 +117,14 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 28px 0;
+  margin: 25px 0;
 }
 
 .feature {
-  border: 1px solid rgba(92, 197, 255, .4);
-  background: rgba(0, 12, 22, .6);
-  border-radius: 3px;
   padding: 10px 12px;
-  font-size: 11px;
+  border: 1px solid rgba(92,197,255,.4);
+  background: rgba(0,12,22,.65);
+  font-size: 10px;
   letter-spacing: 1px;
 }
 
@@ -168,24 +150,23 @@ button {
 }
 
 .secondary {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0,0,0,.6);
   color: white;
 }
 
-button:focus-visible {
-  outline: 3px solid white;
-  outline-offset: 3px;
+button:hover {
+  filter: brightness(1.2);
 }
 
 #details {
   display: none;
-  max-width: 480px;
+  max-width: 500px;
   margin-top: 20px;
   padding: 18px;
-  background: rgba(0, 8, 15, .92);
+  background: rgba(0,8,15,.94);
   border-left: 3px solid #43c4ff;
-  line-height: 1.8;
   color: #dceaf2;
+  line-height: 1.8;
 }
 
 #details h3 {
@@ -194,7 +175,7 @@ button:focus-visible {
 }
 
 footer {
-  border-top: 1px solid rgba(100, 196, 255, .35);
+  border-top: 1px solid rgba(100,196,255,.35);
   padding-top: 18px;
   display: flex;
   flex-wrap: wrap;
@@ -217,9 +198,9 @@ footer {
 }
 
 .sponsor-names {
+  color: white;
   font-size: 13px;
   font-weight: bold;
-  color: white;
   letter-spacing: 1px;
 }
 
@@ -232,15 +213,15 @@ footer {
 
 @media (max-width: 500px) {
   .poster {
-    padding: 18px;
+    padding: 20px;
   }
 
   main {
-    padding: 42px 0;
+    padding: 40px 0;
   }
 
   .eyebrow {
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
 
   h1 {
@@ -275,13 +256,12 @@ footer {
     <div class="eyebrow">A SOLO SURVIVAL ADVENTURE</div>
 
     <h1>THE LOST<br>WORLD</h1>
-
     <h2>PROJECT ZERO</h2>
 
     <p class="description">
       An unknown island. A lost world.
       A secret experiment that changed everything.
-
+      <br><br>
       Survive the wilderness, encounter dinosaurs,
       tame creatures and uncover the truth behind
       Project Zero.
@@ -306,6 +286,7 @@ footer {
 
     <section id="details">
       <h3>WELCOME TO PROJECT ZERO</h3>
+
       The year is 2045. After a plane crash, Alex finds
       himself stranded on a mysterious island inhabited
       by dinosaurs and genetically engineered creatures.
@@ -318,7 +299,6 @@ footer {
       <strong>THE ADVENTURE AWAITS.</strong>
       <p>GAME STATUS: COMING SOON</p>
     </section>
-
   </main>
 
   <footer>
@@ -326,15 +306,15 @@ footer {
       Developed by<br>
       <strong>SP STUDIOS</strong>
       <br><br>
-      Created by<br>
-      <strong>Pranav PV and Sidharth Sudheer</strong>
+      Developers<br>
+      <strong>Siddharth and Pranav TV</strong>
     </div>
 
     <div class="credits sponsors">
       SPONSORED BY<br>
       <div class="sponsor-names">
-        Nivin MS<br>
-        Pradev Krishna KP
+        Nivi Namas<br>
+        Pradyu Krishna KT
       </div>
     </div>
 
@@ -353,12 +333,25 @@ function toggleDetails() {
   if (panel.style.display === "block") {
     panel.style.display = "none";
   } else {
-    panel.style.display = "block";
-    panel.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
-    });
+    showWelcome();
   }
+}
+
+function showWelcome() {
+  const panel = document.getElementById("details");
+
+  panel.innerHTML = `
+    <h3>WELCOME TO PROJECT ZERO</h3>
+    The year is 2045. After a plane crash, Alex finds
+    himself stranded on a mysterious island inhabited
+    by dinosaurs and genetically engineered creatures.
+    <p>Explore the island and uncover the secrets of the experiment.</p>
+    <strong>THE ADVENTURE AWAITS.</strong>
+    <p>GAME STATUS: COMING SOON</p>
+  `;
+
+  panel.style.display = "block";
+  panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 function showCredits() {
@@ -366,19 +359,14 @@ function showCredits() {
 
   panel.innerHTML = `
     <h3>PROJECT CREDITS</h3>
-    <p>Developed by: <strong>SP STUDIOS</strong></p>
-    <p>Created by:
-    <strong>Pranav PV and Sidharth Sudheer</strong></p>
-    <p>Sponsors:
-    <strong>Nivin MS and Pradev Krishna KP</strong></p>
+    <p>Studio: <strong>SP STUDIOS</strong></p>
+    <p>Developers: <strong>Siddharth and Pranav TV</strong></p>
+    <p>Sponsors: <strong>Nivi ms and Pradev Krishna KP</strong></p>
     <p>THE LOST WORLD: PROJECT ZERO</p>
   `;
 
   panel.style.display = "block";
-  panel.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
+  panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 </script>
 
