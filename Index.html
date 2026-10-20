@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE LOST WORLD: PROJECT ZERO</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #02070b;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.poster {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.2)),
+    linear-gradient(0deg, #02070b, transparent 65%),
+    url("poster.jpg") center / cover no-repeat;
+}
+
+.top {
+  letter-spacing: 3px;
+  color: #7bd8ff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.content {
+  max-width: 720px;
+  padding: 35px 0;
+}
+
+h1 {
+  font-size: clamp(38px, 8vw, 76px);
+  line-height: .98;
+  margin: 0;
+  text-shadow: 0 4px 20px black;
+}
+
+h2 {
+  color: #47c5ff;
+  letter-spacing: 4px;
+  margin-top: 12px;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+button {
+  background: #078bd1;
+  border: 1px solid #7bd8ff;
+  color: white;
+  padding: 15px 25px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #005f96;
+}
+
+#details {
+  display: none;
+  max-width: 500px;
+  margin-top: 20px;
+  padding: 18px;
+  background: rgba(0,0,0,.8);
+  border-left: 3px solid #47c5ff;
+  line-height: 1.7;
+}
+
+footer {
+  color: #b6c5d0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer strong {
+  color: #47c5ff;
+}
+
+@media (max-width: 500px) {
+  .poster { padding: 20px; }
+  .description { font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+<main class="poster">
+  <div class="top">SP STUDIOS PRESENTS</div>
+
+  <section class="content">
+    <h1>THE LOST<br>WORLD</h1>
+    <h2>PROJECT ZERO</h2>
+
+    <p class="description">
+      A SOLO SURVIVAL ADVENTURE<br>
+      ON A MYSTERIOUS ISLAND.
+      <br><br>
+      SURVIVE. TAME. UNCOVER THE TRUTH.
+    </p>
+
+    <button onclick="enterSite()">EXPLORE THE PROJECT</button>
+
+    <div id="details">
+      <strong>THE LOST WORLD: PROJECT ZERO</strong><br>
+      Explore the island. Discover dinosaurs.
+      Uncover the secrets of the abandoned laboratory.
+      <br><br>
+      <strong>COMING SOON</strong><br>
+      This website is a project introduction, not the playable game.
+    </div>
+  </section>
+
+  <footer>
+    Developed by <strong>SP STUDIOS</strong><br>
+    Created by <strong>Pranav PV and Sidharth Sudheer</strong><br>
+    © 2026 THE LOST WORLD: PROJECT ZERO
+  </footer>
+</main>
+
+<script>
+function enterSite() {
+  const details = document.getElementById("details");
+  details.style.display =
+    details.style.display === "block" ? "none" : "block";
+}
+</script>
+</body>
+</html>
