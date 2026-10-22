@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#05080d">
+  <meta name="description" content="THE LOST WORLD: PROJECT ZERO — a dinosaur survival adventure by SP STUDIOS.">
 
-  <title>THE LOST WORLD: PROJECT ZERO</title>
-
-  <meta name="description" content="Enter the Lost World: Project Zero, a dinosaur survival adventure by SP STUDIOS. Explore the island, discover its secrets, and face Project Zero.">
+  <title>THE LOST WORLD: PROJECT ZERO | SP STUDIOS</title>
 
   <style>
     :root {
-      --red: #ff3b24;
-      --gold: #ffb15a;
+      --red: #ff3927;
+      --gold: #ffbd70;
       --dark: #05080d;
-      --panel: rgba(10, 15, 21, 0.88);
-      --white: #f4f5f6;
-      --muted: #aeb7c2;
+      --white: #f5f5f5;
+      --muted: #b9c0ca;
     }
 
     * {
@@ -38,32 +36,24 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
-    }
-
-    button {
-      font: inherit;
+      color: inherit;
     }
 
     /* NAVIGATION */
 
     .navbar {
       position: absolute;
-      z-index: 10;
       top: 0;
       left: 0;
+      z-index: 5;
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
       padding: 20px 7%;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.8),
-        transparent
-      );
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: linear-gradient(#000b, transparent);
     }
 
     .brand {
@@ -78,8 +68,8 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 20px;
+      flex-wrap: wrap;
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 1px;
@@ -89,36 +79,32 @@
       color: var(--red);
     }
 
-    /* HERO POSTER */
+    /* HERO WITH YOUR POSTER */
 
     .hero {
       min-height: 100svh;
-      position: relative;
       display: flex;
-      align-items: flex-end;
       justify-content: center;
+      align-items: flex-end;
       text-align: center;
-      padding: 140px 20px 65px;
-      background-image:
+      padding: 150px 20px 65px;
+      position: relative;
+      background:
         linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 0.05) 0%,
-          rgba(0, 0, 0, 0.08) 35%,
-          rgba(0, 0, 0, 0.55) 62%,
+          rgba(0,0,0,0.08) 0%,
+          rgba(0,0,0,0.08) 38%,
+          rgba(0,0,0,0.55) 65%,
           #05080d 100%
         ),
-        url("poster.png");
-
-      background-position: center, center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+        url("poster.png") center center / cover no-repeat;
     }
 
     .hero-content {
-      width: 100%;
-      max-width: 850px;
       position: relative;
       z-index: 1;
+      max-width: 850px;
+      width: 100%;
     }
 
     .eyebrow {
@@ -130,52 +116,52 @@
     }
 
     .hero h1 {
-      font-size: clamp(35px, 8vw, 76px);
-      line-height: 1.02;
+      font-size: clamp(36px, 8vw, 76px);
+      line-height: 1.05;
       font-weight: 1000;
       letter-spacing: 2px;
-      text-shadow: 0 4px 25px #000;
+      text-shadow: 0 4px 24px #000;
     }
 
     .hero h1 span {
       display: block;
-      color: var(--red);
-      letter-spacing: 8px;
-      font-size: 0.65em;
       margin-top: 10px;
+      font-size: 0.62em;
+      color: var(--red);
+      letter-spacing: 7px;
     }
 
     .hero-description {
-      max-width: 600px;
+      max-width: 620px;
       margin: 20px auto;
       color: #e0e3e8;
-      font-size: 15px;
-      text-shadow: 0 2px 8px #000;
+      text-shadow: 0 2px 10px #000;
     }
+
+    /* BUTTONS */
 
     .buttons {
       display: flex;
       justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 25px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       min-height: 48px;
-      padding: 13px 23px;
-      border: 1px solid rgba(255,255,255,0.3);
-      background: rgba(10, 13, 18, 0.8);
+      padding: 13px 22px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ffffff55;
+      background: #080c12e8;
       color: white;
       font-size: 12px;
       font-weight: 900;
-      letter-spacing: 1.3px;
+      letter-spacing: 1px;
       cursor: pointer;
-      transition: 0.25s ease;
+      transition: 0.25s;
     }
 
     .btn:hover {
@@ -186,14 +172,13 @@
     .btn-primary {
       background: var(--red);
       border-color: var(--red);
-      color: white;
     }
 
     .btn-primary:hover {
-      background: #d92715;
+      background: #d72b1c;
     }
 
-    /* SHARED SECTIONS */
+    /* GENERAL SECTIONS */
 
     section:not(.hero) {
       padding: 75px 7%;
@@ -204,44 +189,35 @@
       margin-bottom: 35px;
     }
 
-    .section-heading .eyebrow {
-      margin-bottom: 5px;
-    }
-
     .section-heading h2 {
-      font-size: clamp(27px, 5vw, 43px);
+      font-size: clamp(28px, 5vw, 44px);
       line-height: 1.2;
-      letter-spacing: 1px;
     }
 
     .section-heading p {
-      color: var(--muted);
       margin-top: 12px;
+      color: var(--muted);
     }
 
     /* STORY */
 
     .story-section {
       background:
-        radial-gradient(
-          ellipse at top,
-          rgba(96, 31, 21, 0.2),
-          transparent 60%
-        ),
-        #05080d;
+        radial-gradient(ellipse at top, #59190f35, transparent 65%),
+        var(--dark);
     }
 
     .story-panel {
       max-width: 900px;
       margin: auto;
       padding: 30px;
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #0b1017e8;
+      border: 1px solid #ffffff1c;
       border-left: 3px solid var(--red);
     }
 
     .story-panel p {
-      color: #c7ced7;
+      color: #c8cfd8;
       margin-bottom: 16px;
     }
 
@@ -265,14 +241,10 @@
 
     .feature-card {
       padding: 25px;
-      min-height: 190px;
-      background: linear-gradient(
-        145deg,
-        rgba(31, 40, 51, 0.75),
-        rgba(8, 11, 16, 0.95)
-      );
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: 0.25s ease;
+      min-height: 185px;
+      background: linear-gradient(145deg, #202a35b8, #080b10);
+      border: 1px solid #ffffff18;
+      transition: 0.25s;
     }
 
     .feature-card:hover {
@@ -282,7 +254,7 @@
 
     .feature-icon {
       font-size: 30px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .feature-card h3 {
@@ -295,19 +267,18 @@
       font-size: 14px;
     }
 
-    /* PROJECT DETAILS */
+    /* GAME DEMO SECTION */
 
     .project-section {
       text-align: center;
       background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
+        linear-gradient(#0009, #05080df2),
         url("poster.png") center 60% / cover no-repeat;
-      background-attachment: scroll;
     }
 
-    .project-section p {
+    .project-section > p {
       max-width: 650px;
-      margin: 0 auto 22px;
+      margin: 0 auto 20px;
       color: #d0d5db;
     }
 
@@ -326,17 +297,17 @@
     }
 
     .credit-card {
-      padding: 25px;
+      padding: 26px;
       text-align: center;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: #ffffff08;
+      border: 1px solid #ffffff1b;
     }
 
     .credit-card h3 {
       color: var(--gold);
       font-size: 12px;
       letter-spacing: 3px;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
     }
 
     .credit-card p {
@@ -350,18 +321,18 @@
       letter-spacing: 2px;
     }
 
+    .game-name {
+      color: var(--red);
+    }
+
     /* FOOTER */
 
     footer {
-      padding: 28px 20px;
+      padding: 30px 20px;
       text-align: center;
       background: #020305;
-      color: #818b97;
+      color: #87919e;
       font-size: 12px;
-    }
-
-    footer strong {
-      color: white;
     }
 
     .footer-title {
@@ -371,7 +342,11 @@
       margin-bottom: 5px;
     }
 
-    /* RESPONSIVE */
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
 
     @media (max-width: 700px) {
       .navbar {
@@ -384,14 +359,18 @@
       }
 
       .nav-links {
-        gap: 12px;
+        gap: 10px;
         font-size: 10px;
       }
 
       .hero {
         min-height: 90svh;
-        padding: 130px 17px 45px;
+        padding: 130px 16px 45px;
         background-position: center, 52% center;
+      }
+
+      .hero h1 span {
+        letter-spacing: 4px;
       }
 
       .hero-description {
@@ -402,16 +381,13 @@
         padding: 55px 5%;
       }
 
-      .feature-grid {
+      .feature-grid,
+      .credits-grid {
         grid-template-columns: 1fr;
       }
 
       .feature-card {
         min-height: auto;
-      }
-
-      .credits-grid {
-        grid-template-columns: 1fr;
       }
 
       .story-panel {
@@ -442,9 +418,7 @@
 
   <!-- NAVIGATION -->
   <header class="navbar">
-    <a class="brand" href="#home">
-      SP <span>STUDIOS</span>
-    </a>
+    <a class="brand" href="#home">SP <span>STUDIOS</span></a>
 
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">HOME</a>
@@ -456,13 +430,11 @@
 
   <main>
 
-    <!-- HERO / POSTER -->
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-content">
 
-        <div class="eyebrow">
-          A SURVIVAL ADVENTURE
-        </div>
+        <div class="eyebrow">A SURVIVAL ADVENTURE</div>
 
         <h1>
           THE LOST WORLD
@@ -513,22 +485,21 @@
         </p>
 
         <p>
-          The island is alive with dinosaurs, dangerous
+          The island is filled with dinosaurs, mysterious
           creatures, abandoned facilities, and the remains
           of experiments that were never meant to be discovered.
         </p>
 
         <p>
-          Deep inside a mysterious laboratory lies the secret
-          of <strong>PROJECT ZERO</strong>. As Alex explores
-          the island, the truth behind the experiments begins
-          to emerge.
+          Deep inside a secret laboratory lies the truth
+          about <strong>PROJECT ZERO</strong>. Every discovery
+          brings Alex closer to understanding what happened
+          on this island.
         </p>
 
         <p>
-          Explore, survive, tame creatures, discover hidden
-          locations, and prepare to face the island's greatest
-          threat. Every discovery brings Alex closer to the truth.
+          Explore, gather resources, tame creatures, and
+          prepare to face the island's greatest threat.
         </p>
       </div>
     </section>
@@ -593,14 +564,14 @@
           <h3>Boss Encounters</h3>
           <p>
             Prepare for dangerous encounters and
-            uncover the island's greatest threats.
+            discover the island's greatest threats.
           </p>
         </article>
 
       </div>
     </section>
 
-    <!-- PROJECT -->
+    <!-- PLAY DEMO -->
     <section class="project-section">
       <div class="section-heading">
         <div class="eyebrow">YOUR JOURNEY STARTS HERE</div>
@@ -608,9 +579,8 @@
       </div>
 
       <p>
-        The island is waiting. Discover its secrets,
-        explore its wilderness, and find out what
-        PROJECT ZERO really means.
+        The island is waiting. Explore the wilderness,
+        uncover hidden secrets, and discover PROJECT ZERO.
       </p>
 
       <div class="buttons">
@@ -623,13 +593,11 @@
           ▶ LAUNCH GAME DEMO
         </a>
 
-        <a class="btn" href="#credits">
-          MEET THE TEAM
-        </a>
+        <a class="btn" href="#credits">MEET THE TEAM</a>
       </div>
     </section>
 
-    <!-- CREDITS -->
+    <!-- UPDATED CREDITS -->
     <section class="credits-section" id="credits">
       <div class="section-heading">
         <div class="eyebrow">THE PEOPLE BEHIND THE PROJECT</div>
@@ -644,21 +612,21 @@
         </div>
 
         <div class="credit-card">
-          <h3>DEVELOPERS</h3>
+          <h3>CREATORS & DEVELOPERS</h3>
           <p>Pranav PV</p>
-          <p>Siddharth SUDHEER</p>
+          <p>Sidharth Sudheer</p>
         </div>
 
         <div class="credit-card">
           <h3>SPONSORS</h3>
-          <p>Nivi Namas</p>
-          <p>PradEV Krishna KP</p>
+          <p>Nivin MS</p>
+          <p>Pradev Krishna KP</p>
         </div>
 
         <div class="credit-card">
           <h3>GAME TITLE</h3>
           <p>THE LOST WORLD</p>
-          <p style="color: var(--red);">PROJECT ZERO</p>
+          <p class="game-name">PROJECT ZERO</p>
         </div>
 
       </div>
@@ -670,8 +638,9 @@
   <footer>
     <div class="footer-title">THE LOST WORLD: PROJECT ZERO</div>
     <p>Developed by <strong>SP STUDIOS</strong></p>
+    <p>Creators: Pranav PV &amp; Sidharth Sudheer</p>
+    <p>Sponsors: Nivin MS &amp; Pradev Krishna KP</p>
     <p>© 2026 SP STUDIOS. All rights reserved.</p>
-    <p>Website promotional page.</p>
   </footer>
 
 </body>
