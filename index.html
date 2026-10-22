@@ -1,374 +1,678 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#02070b">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05080d">
 
-<title>THE LOST WORLD: PROJECT ZERO</title>
-<meta name="description" content="THE LOST WORLD: PROJECT ZERO — a dinosaur survival adventure by SP STUDIOS.">
+  <title>THE LOST WORLD: PROJECT ZERO</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <meta name="description" content="Enter the Lost World: Project Zero, a dinosaur survival adventure by SP STUDIOS. Explore the island, discover its secrets, and face Project Zero.">
 
-html {
-  scroll-behavior: smooth;
-}
+  <style>
+    :root {
+      --red: #ff3b24;
+      --gold: #ffb15a;
+      --dark: #05080d;
+      --panel: rgba(10, 15, 21, 0.88);
+      --white: #f4f5f6;
+      --muted: #aeb7c2;
+    }
 
-body {
-  margin: 0;
-  background: #02070b;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.poster {
-  min-height: 100vh;
-  min-height: 100svh;
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 25px;
-  overflow: hidden;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.poster::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(90deg, rgba(0,5,10,.94), rgba(0,5,10,.35)),
-    linear-gradient(0deg, #02070b, transparent 65%),
-    url("poster.jpg") center / cover no-repeat;
-}
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-.poster::after {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(75,195,255,.25);
-  pointer-events: none;
-  z-index: -1;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
+    button {
+      font: inherit;
+    }
 
-.studio {
-  color: #64d1ff;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
+    /* NAVIGATION */
 
-.status {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #d4e7f2;
-}
+    .navbar {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 20px 7%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        transparent
+      );
+    }
 
-main {
-  width: 100%;
-  max-width: 850px;
-  padding: 45px 0;
-}
+    .brand {
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 17px;
+    }
 
-.eyebrow {
-  color: #9bc7dc;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  margin-bottom: 18px;
-}
+    .brand span {
+      color: var(--red);
+    }
 
-h1 {
-  margin: 0;
-  font-size: clamp(42px, 9vw, 88px);
-  line-height: .92;
-  letter-spacing: -2px;
-  text-shadow: 0 5px 25px black;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-h2 {
-  color: #43c4ff;
-  font-size: clamp(21px, 5vw, 38px);
-  letter-spacing: 5px;
-  margin: 16px 0 24px;
-}
+    .nav-links a:hover {
+      color: var(--red);
+    }
 
-.description {
-  max-width: 450px;
-  color: #e0e9ee;
-  font-size: 15px;
-  line-height: 1.8;
-}
+    /* HERO POSTER */
 
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 25px 0;
-}
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 20px 65px;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.05) 0%,
+          rgba(0, 0, 0, 0.08) 35%,
+          rgba(0, 0, 0, 0.55) 62%,
+          #05080d 100%
+        ),
+        url("poster.png");
 
-.feature {
-  padding: 10px 12px;
-  border: 1px solid rgba(92,197,255,.4);
-  background: rgba(0,12,22,.65);
-  font-size: 10px;
-  letter-spacing: 1px;
-}
+      background-position: center, center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+    .hero-content {
+      width: 100%;
+      max-width: 850px;
+      position: relative;
+      z-index: 1;
+    }
 
-button {
-  padding: 14px 20px;
-  border: 1px solid #55caff;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
 
-.primary {
-  background: #078dcc;
-  color: white;
-}
+    .hero h1 {
+      font-size: clamp(35px, 8vw, 76px);
+      line-height: 1.02;
+      font-weight: 1000;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 25px #000;
+    }
 
-.secondary {
-  background: rgba(0,0,0,.6);
-  color: white;
-}
+    .hero h1 span {
+      display: block;
+      color: var(--red);
+      letter-spacing: 8px;
+      font-size: 0.65em;
+      margin-top: 10px;
+    }
 
-button:hover {
-  filter: brightness(1.2);
-}
+    .hero-description {
+      max-width: 600px;
+      margin: 20px auto;
+      color: #e0e3e8;
+      font-size: 15px;
+      text-shadow: 0 2px 8px #000;
+    }
 
-#details {
-  display: none;
-  max-width: 500px;
-  margin-top: 20px;
-  padding: 18px;
-  background: rgba(0,8,15,.94);
-  border-left: 3px solid #43c4ff;
-  color: #dceaf2;
-  line-height: 1.8;
-}
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
 
-#details h3 {
-  color: #43c4ff;
-  margin-top: 0;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 23px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(10, 13, 18, 0.8);
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
 
-footer {
-  border-top: 1px solid rgba(100,196,255,.35);
-  padding-top: 18px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 18px;
-}
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--red);
+    }
 
-.credits {
-  color: #b6c6d0;
-  font-size: 11px;
-  line-height: 2;
-}
+    .btn-primary {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
 
-.credits strong {
-  color: #54cbff;
-}
+    .btn-primary:hover {
+      background: #d92715;
+    }
 
-.sponsors {
-  text-align: right;
-}
+    /* SHARED SECTIONS */
 
-.sponsor-names {
-  color: white;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+    section:not(.hero) {
+      padding: 75px 7%;
+    }
 
-.copyright {
-  width: 100%;
-  margin-top: 5px;
-  color: #788b99;
-  font-size: 10px;
-}
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
 
-@media (max-width: 500px) {
-  .poster {
-    padding: 20px;
-  }
+    .section-heading .eyebrow {
+      margin-bottom: 5px;
+    }
 
-  main {
-    padding: 40px 0;
-  }
+    .section-heading h2 {
+      font-size: clamp(27px, 5vw, 43px);
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
 
-  .eyebrow {
-    letter-spacing: 2px;
-  }
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
 
-  h1 {
-    letter-spacing: -1px;
-  }
+    /* STORY */
 
-  h2 {
-    letter-spacing: 3px;
-  }
+    .story-section {
+      background:
+        radial-gradient(
+          ellipse at top,
+          rgba(96, 31, 21, 0.2),
+          transparent 60%
+        ),
+        #05080d;
+    }
 
-  footer {
-    flex-direction: column;
-  }
+    .story-panel {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-left: 3px solid var(--red);
+    }
 
-  .sponsors {
-    text-align: left;
-  }
-}
-</style>
+    .story-panel p {
+      color: #c7ced7;
+      margin-bottom: 16px;
+    }
+
+    .story-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* FEATURES */
+
+    .features {
+      background: #090d13;
+    }
+
+    .feature-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 25px;
+      min-height: 190px;
+      background: linear-gradient(
+        145deg,
+        rgba(31, 40, 51, 0.75),
+        rgba(8, 11, 16, 0.95)
+      );
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--red);
+    }
+
+    .feature-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PROJECT DETAILS */
+
+    .project-section {
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
+        url("poster.png") center 60% / cover no-repeat;
+      background-attachment: scroll;
+    }
+
+    .project-section p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      color: #d0d5db;
+    }
+
+    /* CREDITS */
+
+    .credits-section {
+      background: #070a0f;
+    }
+
+    .credits-grid {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .credit-card {
+      padding: 25px;
+      text-align: center;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .credit-card h3 {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .credit-card p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .studio-name {
+      color: var(--red);
+      font-size: 26px !important;
+      letter-spacing: 2px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 20px;
+      text-align: center;
+      background: #020305;
+      color: #818b97;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    .footer-title {
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 17px 5%;
+      }
+
+      .brand {
+        font-size: 13px;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: 90svh;
+        padding: 130px 17px 45px;
+        background-position: center, 52% center;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      section:not(.hero) {
+        padding: 55px 5%;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .credits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-panel {
+        padding: 22px;
+      }
+
+      .btn {
+        padding: 12px 15px;
+        font-size: 11px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="poster">
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a class="brand" href="#home">
+      SP <span>STUDIOS</span>
+    </a>
 
-  <header>
-    <div class="studio">SP STUDIOS</div>
-    <div class="status">SURVIVAL PROTOCOL: ZERO</div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">HOME</a>
+      <a href="#story">STORY</a>
+      <a href="#features">FEATURES</a>
+      <a href="#credits">CREDITS</a>
+    </nav>
   </header>
 
   <main>
-    <div class="eyebrow">A SOLO SURVIVAL ADVENTURE</div>
 
-    <h1>THE LOST<br>WORLD</h1>
-    <h2>PROJECT ZERO</h2>
+    <!-- HERO / POSTER -->
+    <section class="hero" id="home">
+      <div class="hero-content">
 
-    <p class="description">
-      An unknown island. A lost world.
-      A secret experiment that changed everything.
-      <br><br>
-      Survive the wilderness, encounter dinosaurs,
-      tame creatures and uncover the truth behind
-      Project Zero.
-    </p>
+        <div class="eyebrow">
+          A SURVIVAL ADVENTURE
+        </div>
 
-    <div class="features">
-      <div class="feature">DINOSAURS & CREATURES</div>
-      <div class="feature">OPEN-WORLD EXPLORATION</div>
-      <div class="feature">ABANDONED LABORATORIES</div>
-      <div class="feature">SURVIVAL & TAMING</div>
-    </div>
+        <h1>
+          THE LOST WORLD
+          <span>PROJECT ZERO</span>
+        </h1>
 
-    <div class="actions">
-      <button class="primary" onclick="toggleDetails()">
-        EXPLORE THE PROJECT
-      </button>
+        <p class="hero-description">
+          One mysterious island. A lost world.
+          Ancient predators and a secret that should
+          never have existed. Your survival begins here.
+        </p>
 
-      <button class="secondary" onclick="showCredits()">
-        PROJECT CREDITS
-      </button>
-    </div>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#story">
+            EXPLORE THE PROJECT
+          </a>
 
-    <section id="details">
-      <h3>WELCOME TO PROJECT ZERO</h3>
+          <a
+            class="btn"
+            href="https://pranavpvkoottupatha-ai.github.io/Lost-world-game/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ▶ PLAY DEMO
+          </a>
 
-      The year is 2045. After a plane crash, Alex finds
-      himself stranded on a mysterious island inhabited
-      by dinosaurs and genetically engineered creatures.
+          <a class="btn" href="#credits">
+            PROJECT CREDITS
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story-section" id="story">
+      <div class="section-heading">
+        <div class="eyebrow">THE MYSTERY BEGINS</div>
+        <h2>THE STORY</h2>
+        <p>Welcome to the island where nothing is as it seems.</p>
+      </div>
+
+      <div class="story-panel">
+        <p>
+          The year is 2045. A passenger plane crashes on a
+          remote island hidden from the outside world.
+          Alex, the lone survivor, must find a way to survive.
+        </p>
+
+        <p>
+          The island is alive with dinosaurs, dangerous
+          creatures, abandoned facilities, and the remains
+          of experiments that were never meant to be discovered.
+        </p>
+
+        <p>
+          Deep inside a mysterious laboratory lies the secret
+          of <strong>PROJECT ZERO</strong>. As Alex explores
+          the island, the truth behind the experiments begins
+          to emerge.
+        </p>
+
+        <p>
+          Explore, survive, tame creatures, discover hidden
+          locations, and prepare to face the island's greatest
+          threat. Every discovery brings Alex closer to the truth.
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="section-heading">
+        <div class="eyebrow">SURVIVE THE UNKNOWN</div>
+        <h2>GAME FEATURES</h2>
+        <p>Discover what awaits you in the Lost World.</p>
+      </div>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <div class="feature-icon">🦖</div>
+          <h3>Dinosaur Ecosystem</h3>
+          <p>
+            Discover dinosaurs and other creatures
+            across the mysterious island.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🌴</div>
+          <h3>Open-World Exploration</h3>
+          <p>
+            Explore dangerous forests, forgotten
+            ruins, and abandoned facilities.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Survival Adventure</h3>
+          <p>
+            Gather resources, prepare for danger,
+            and fight to stay alive.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🐾</div>
+          <h3>Creature Taming</h3>
+          <p>
+            Discover the creature-taming systems
+            available in the game.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🧪</div>
+          <h3>Project Zero</h3>
+          <p>
+            Investigate secret experiments and
+            uncover the truth hidden in the laboratory.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3>Boss Encounters</h3>
+          <p>
+            Prepare for dangerous encounters and
+            uncover the island's greatest threats.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section class="project-section">
+      <div class="section-heading">
+        <div class="eyebrow">YOUR JOURNEY STARTS HERE</div>
+        <h2>ENTER THE LOST WORLD</h2>
+      </div>
 
       <p>
-        Explore the island, discover abandoned research
-        facilities and uncover the secrets of the experiment.
+        The island is waiting. Discover its secrets,
+        explore its wilderness, and find out what
+        PROJECT ZERO really means.
       </p>
 
-      <strong>THE ADVENTURE AWAITS.</strong>
-      <p>GAME STATUS: COMING SOON</p>
+      <div class="buttons">
+        <a
+          class="btn btn-primary"
+          href="https://pranavpvkoottupatha-ai.github.io/Lost-world-game/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ▶ LAUNCH GAME DEMO
+        </a>
+
+        <a class="btn" href="#credits">
+          MEET THE TEAM
+        </a>
+      </div>
     </section>
+
+    <!-- CREDITS -->
+    <section class="credits-section" id="credits">
+      <div class="section-heading">
+        <div class="eyebrow">THE PEOPLE BEHIND THE PROJECT</div>
+        <h2>PROJECT CREDITS</h2>
+      </div>
+
+      <div class="credits-grid">
+
+        <div class="credit-card">
+          <h3>DEVELOPED BY</h3>
+          <p class="studio-name">SP STUDIOS</p>
+        </div>
+
+        <div class="credit-card">
+          <h3>DEVELOPERS</h3>
+          <p>Pranav TV</p>
+          <p>Siddharth</p>
+        </div>
+
+        <div class="credit-card">
+          <h3>SPONSORS</h3>
+          <p>Nivi Namas</p>
+          <p>Pradyu Krishna KT</p>
+        </div>
+
+        <div class="credit-card">
+          <h3>GAME TITLE</h3>
+          <p>THE LOST WORLD</p>
+          <p style="color: var(--red);">PROJECT ZERO</p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="credits">
-      Developed by<br>
-      <strong>SP STUDIOS</strong>
-      <br><br>
-      Developers<br>
-      <strong>Siddharth and Pranav TV</strong>
-    </div>
-
-    <div class="credits sponsors">
-      SPONSORED BY<br>
-      <div class="sponsor-names">
-        Nivi Namas<br>
-        Pradyu Krishna KT
-      </div>
-    </div>
-
-    <div class="copyright">
-      © 2026 THE LOST WORLD: PROJECT ZERO.
-      All rights reserved.
-    </div>
+    <div class="footer-title">THE LOST WORLD: PROJECT ZERO</div>
+    <p>Developed by <strong>SP STUDIOS</strong></p>
+    <p>© 2026 SP STUDIOS. All rights reserved.</p>
+    <p>Website promotional page.</p>
   </footer>
-
-</div>
-
-<script>
-function toggleDetails() {
-  const panel = document.getElementById("details");
-
-  if (panel.style.display === "block") {
-    panel.style.display = "none";
-  } else {
-    showWelcome();
-  }
-}
-
-function showWelcome() {
-  const panel = document.getElementById("details");
-
-  panel.innerHTML = `
-    <h3>WELCOME TO PROJECT ZERO</h3>
-    The year is 2045. After a plane crash, Alex finds
-    himself stranded on a mysterious island inhabited
-    by dinosaurs and genetically engineered creatures.
-    <p>Explore the island and uncover the secrets of the experiment.</p>
-    <strong>THE ADVENTURE AWAITS.</strong>
-    <p>GAME STATUS: COMING SOON</p>
-  `;
-
-  panel.style.display = "block";
-  panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
-function showCredits() {
-  const panel = document.getElementById("details");
-
-  panel.innerHTML = `
-    <h3>PROJECT CREDITS</h3>
-    <p>Studio: <strong>SP STUDIOS</strong></p>
-    <p>Developers: <strong>Siddharth and Pranav TV</strong></p>
-    <p>Sponsors: <strong>Nivi ms and Pradev Krishna KP</strong></p>
-    <p>THE LOST WORLD: PROJECT ZERO</p>
-  `;
-
-  panel.style.display = "block";
-  panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-</script>
 
 </body>
 </html>
