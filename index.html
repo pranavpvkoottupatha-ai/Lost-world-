@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07110d">
-  <meta name="description" content="THE LOST WORLD: PROJECT ZERO — a survival adventure by SP STUDIOS.">
+  <meta name="description" content="THE LOST WORLD: PROJECT ZERO by SP STUDIOS">
   <title>THE LOST WORLD: PROJECT ZERO</title>
 
   <style>
@@ -33,7 +33,7 @@
     header {
       background: #0b1710;
       border-bottom: 1px solid #284333;
-      padding: 18px 6%;
+      padding: 18px 5%;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -51,9 +51,9 @@
 
     .logo {
       color: var(--green);
-      font-size: 19px;
       font-weight: bold;
       letter-spacing: 1px;
+      font-size: 19px;
     }
 
     nav {
@@ -74,7 +74,7 @@
     }
 
     section {
-      padding: 65px 6%;
+      padding: 60px 6%;
       scroll-margin-top: 90px;
     }
 
@@ -92,23 +92,21 @@
       color: var(--green);
       font-size: clamp(30px, 6vw, 58px);
       line-height: 1.15;
-      margin-bottom: 12px;
     }
 
-    .subtitle {
+    .subtitle, .muted {
       color: var(--muted);
-      font-size: 17px;
     }
 
     .poster {
+      display: block;
       width: 100%;
       max-width: 850px;
       max-height: 470px;
       object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid #34533e;
       margin: 25px auto;
-      display: block;
+      border: 1px solid #34533e;
+      border-radius: 12px;
     }
 
     .buttons {
@@ -121,13 +119,14 @@
 
     .btn {
       display: inline-block;
+      padding: 12px 23px;
       background: var(--green);
       color: #06110a;
       text-decoration: none;
       font-weight: bold;
-      padding: 12px 23px;
-      border-radius: 7px;
       border: 1px solid var(--green);
+      border-radius: 7px;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -143,10 +142,9 @@
     h2 {
       color: var(--green);
       font-size: clamp(25px, 4vw, 36px);
-      margin-top: 0;
     }
 
-    .panel {
+    .panel, .feature {
       background: var(--panel);
       border: 1px solid #263e2e;
       border-radius: 12px;
@@ -157,14 +155,9 @@
       background: #000;
       border: 1px solid #34533e;
       border-radius: 12px;
-      padding: 18px;
-      min-height: 150px;
+      padding: 20px;
+      text-align: center;
       overflow-wrap: anywhere;
-    }
-
-    .YISEmbed {
-      margin: 0 auto;
-      max-width: 100%;
     }
 
     .YISEmbed a {
@@ -177,13 +170,6 @@
       gap: 17px;
     }
 
-    .feature {
-      background: var(--panel);
-      border: 1px solid #263e2e;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
     .feature h3 {
       color: var(--green);
       margin-top: 0;
@@ -193,20 +179,12 @@
       text-align: center;
     }
 
-    .credits p {
-      margin: 10px 0;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
     footer {
       padding: 25px 6%;
       text-align: center;
       color: var(--muted);
-      border-top: 1px solid #284333;
       background: #0b1710;
+      border-top: 1px solid #284333;
       font-size: 14px;
     }
 
@@ -229,10 +207,10 @@
       }
 
       section {
-        padding: 45px 5%;
+        padding: 42px 5%;
       }
 
-      .panel {
+      .panel, .feature {
         padding: 17px;
       }
     }
@@ -257,6 +235,7 @@
   </header>
 
   <main>
+
     <section id="home" class="hero">
       <div class="container">
         <p class="subtitle">SP STUDIOS PRESENTS</p>
@@ -270,16 +249,23 @@
         <img
           class="poster"
           src="poster.png"
-          alt="THE LOST WORLD: PROJECT ZERO game poster"
+          alt="THE LOST WORLD: PROJECT ZERO poster"
           onerror="this.style.display='none'"
         >
 
         <div class="buttons">
-          <a class="btn" href="https://pranavpvkoottupatha-ai.github.io/Demo-game-/">
+          <a class="btn"
+             href="https://pranavpvkoottupatha-ai.github.io/Demo-game-/"
+             target="_blank"
+             rel="noopener noreferrer">
             PLAY DEMO
           </a>
 
-          <a class="btn btn-outline" href="#trailer">
+          <!-- Clickable WATCH TRAILER hyperlink -->
+          <a class="btn btn-outline"
+             href="https://yourimageshare.com/ib/iBlKCAP5XQ"
+             target="_blank"
+             rel="noopener noreferrer">
             WATCH TRAILER
           </a>
         </div>
@@ -291,34 +277,31 @@
         <h2>OFFICIAL TRAILER</h2>
 
         <p class="muted">
-          Enter the mysterious world of dinosaurs, survival and Project Zero.
+          Enter the world of dinosaurs, survival and Project Zero.
         </p>
 
         <div class="trailer-frame">
-          <blockquote
-            class="YISEmbed"
-            data-id="iBlKCAP5XQ"
-          >
-            <a href="https://yourimageshare.com/ib/iBlKCAP5XQ">
+          <blockquote class="YISEmbed" data-id="iBlKCAP5XQ">
+            <a href="https://yourimageshare.com/ib/iBlKCAP5XQ"
+               target="_blank"
+               rel="noopener noreferrer">
               Watch THE LOST WORLD: PROJECT ZERO trailer
             </a>
           </blockquote>
         </div>
 
-        <p id="trailer-status" class="muted" aria-live="polite">
-          If the embedded trailer does not load, use the link below.
-        </p>
-
         <div class="buttons">
-          <a
-            class="btn btn-outline"
-            href="https://yourimageshare.com/ib/iBlKCAP5XQ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="btn"
+             href="https://yourimageshare.com/ib/iBlKCAP5XQ"
+             target="_blank"
+             rel="noopener noreferrer">
             OPEN TRAILER
           </a>
         </div>
+
+        <p class="muted">
+          If the trailer does not load here, tap OPEN TRAILER.
+        </p>
       </div>
     </section>
 
@@ -335,14 +318,14 @@
 
           <p>
             Dinosaurs roam the island. Abandoned laboratories hide secrets.
-            Strange creatures reveal traces of a mysterious experiment known
-            as Project Zero.
+            Strange creatures reveal traces of an experiment known as
+            Project Zero.
           </p>
 
           <p>
-            Explore the island, uncover the truth, collect resources and
-            prepare for the final battle. Alex's survival depends on courage,
-            exploration and smart decisions.
+            Explore the island, gather resources and prepare for the final
+            battle. Alex's survival depends on courage, exploration and
+            smart decisions.
           </p>
         </div>
       </div>
@@ -354,33 +337,33 @@
 
         <div class="feature-grid">
           <article class="feature">
-            <h3>🦖 Dinosaur World</h3>
-            <p>Discover dinosaurs and explore their habitats across the island.</p>
+            <h3>Dinosaur World</h3>
+            <p>Discover dinosaurs and explore their island habitats.</p>
           </article>
 
           <article class="feature">
-            <h3>🌿 Survival</h3>
-            <p>Explore, gather resources and prepare for the dangers ahead.</p>
+            <h3>Survival Adventure</h3>
+            <p>Explore, gather resources and prepare for danger.</p>
           </article>
 
           <article class="feature">
-            <h3>🧬 Project Zero</h3>
-            <p>Investigate abandoned laboratories and uncover hidden secrets.</p>
+            <h3>Project Zero</h3>
+            <p>Investigate abandoned laboratories and uncover secrets.</p>
           </article>
 
           <article class="feature">
-            <h3>⚔️ Boss Battle</h3>
+            <h3>Boss Battles</h3>
             <p>Prepare your equipment and challenge powerful enemies.</p>
           </article>
 
           <article class="feature">
-            <h3>🕷️ Spider Companion</h3>
-            <p>Discover the companion system and its role in your adventure.</p>
+            <h3>Spider Companion</h3>
+            <p>Discover the companion system during your adventure.</p>
           </article>
 
           <article class="feature">
-            <h3>🎮 Adventure Demo</h3>
-            <p>Try the available demo and experience the game for yourself.</p>
+            <h3>Playable Demo</h3>
+            <p>Launch the demo and experience the available gameplay.</p>
           </article>
         </div>
       </div>
@@ -393,23 +376,19 @@
 
           <p>
             Ready to explore THE LOST WORLD: PROJECT ZERO?
-            Start your adventure in the demo.
+            Start your adventure today.
           </p>
 
           <div class="buttons">
-            <a
-              class="btn"
-              href="https://pranavpvkoottupatha-ai.github.io/Demo-game-/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="btn"
+               href="https://pranavpvkoottupatha-ai.github.io/Demo-game-/"
+               target="_blank"
+               rel="noopener noreferrer">
               START PLAYING
             </a>
           </div>
 
-          <p class="muted">
-            The demo opens on its own page.
-          </p>
+          <p class="muted">The demo opens on its own page.</p>
         </div>
       </div>
     </section>
@@ -430,6 +409,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
