@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07110d">
-  <meta name="description" content="THE LOST WORLD: PROJECT ZERO by SP STUDIOS">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="THE LOST WORLD: PROJECT ZERO — SP STUDIOS">
   <title>THE LOST WORLD: PROJECT ZERO</title>
 
   <style>
     :root {
-      --bg: #07110d;
-      --panel: #101d16;
-      --green: #69ff9a;
-      --text: #f0f5f1;
-      --muted: #b3c2b8;
+      --bg: #080808;
+      --panel: #151515;
+      --red: #ff2020;
+      --red-dark: #a50000;
+      --text: #f4f4f4;
+      --muted: #aaa;
+      --border: #471010;
     }
 
     * {
@@ -27,20 +29,20 @@
       background: var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     header {
+      background: #050505;
+      border-bottom: 2px solid var(--red);
+      padding: 16px 5%;
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: #0b1710;
-      border-bottom: 1px solid #284333;
-      padding: 16px 5%;
+      z-index: 100;
     }
 
     .header-inner {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: auto;
       display: flex;
       justify-content: space-between;
@@ -50,139 +52,194 @@
     }
 
     .logo {
-      color: var(--green);
-      font-weight: bold;
-      letter-spacing: 1px;
-      font-size: 19px;
+      color: var(--red);
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 0 0 12px #a00000;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 18px;
     }
 
     nav a {
-      color: var(--text);
+      color: #eee;
       text-decoration: none;
       font-size: 13px;
       font-weight: bold;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: var(--green);
+      color: var(--red);
     }
 
     section {
-      padding: 60px 6%;
-      scroll-margin-top: 100px;
+      padding: 65px 6%;
+      scroll-margin-top: 90px;
     }
 
     .container {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .hero {
       text-align: center;
-      padding-top: 45px;
+      padding-top: 55px;
+      background:
+        radial-gradient(ellipse at top, #300000 0%, #100606 35%, #080808 75%);
     }
 
-    .hero h1 {
-      color: var(--green);
-      font-size: clamp(30px, 6vw, 58px);
-      line-height: 1.15;
+    .eyebrow {
+      color: var(--red);
+      font-weight: bold;
+      letter-spacing: 4px;
     }
 
-    .subtitle,
-    .muted {
-      color: var(--muted);
+    h1 {
+      color: #fff;
+      font-size: clamp(34px, 7vw, 68px);
+      line-height: 1.1;
+      margin: 15px 0;
+      text-shadow: 0 0 20px #740000;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    h2 {
+      color: var(--red);
+      font-size: clamp(25px, 4vw, 38px);
+      text-transform: uppercase;
+      border-left: 5px solid var(--red);
+      padding-left: 14px;
+      margin-top: 0;
+    }
+
+    .subtitle {
+      color: #c4c4c4;
+      font-size: 17px;
     }
 
     .poster {
       display: block;
       width: 100%;
-      max-width: 850px;
-      max-height: 470px;
+      max-width: 900px;
+      max-height: 480px;
       object-fit: cover;
-      margin: 25px auto;
-      border: 1px solid #34533e;
-      border-radius: 12px;
+      margin: 30px auto;
+      border: 2px solid var(--red-dark);
+      border-radius: 5px;
+      box-shadow: 0 0 25px #350000;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
+      gap: 15px;
       margin-top: 25px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 23px;
-      background: var(--green);
-      color: #06110a;
+      background: var(--red);
+      color: white;
+      padding: 12px 25px;
+      border: 1px solid var(--red);
+      border-radius: 3px;
       text-decoration: none;
-      font-weight: bold;
-      border: 1px solid var(--green);
-      border-radius: 7px;
-      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: 1px;
       transition: 0.2s;
     }
 
     .btn:hover {
-      background: transparent;
-      color: var(--green);
+      background: #b80000;
+      border-color: #ff7777;
+      transform: translateY(-2px);
     }
 
     .btn-outline {
       background: transparent;
-      color: var(--green);
+      color: var(--red);
     }
 
-    h2 {
-      color: var(--green);
-      font-size: clamp(25px, 4vw, 36px);
+    .btn-outline:hover {
+      color: white;
+      background: var(--red-dark);
     }
 
     .panel,
     .feature {
       background: var(--panel);
-      border: 1px solid #263e2e;
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
       padding: 24px;
+    }
+
+    .panel p {
+      color: #ddd;
     }
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 17px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      border-top: 3px solid var(--red);
+      transition: 0.2s;
+    }
+
+    .feature:hover {
+      border-color: var(--red);
+      box-shadow: 0 0 16px #300000;
+      transform: translateY(-3px);
     }
 
     .feature h3 {
-      color: var(--green);
+      color: var(--red);
       margin-top: 0;
     }
 
-    .trailer-panel {
-      text-align: center;
+    .muted {
+      color: var(--muted);
     }
 
     .credits {
       text-align: center;
     }
 
+    .credits h2 {
+      border: none;
+      padding: 0;
+    }
+
+    .credits strong {
+      color: var(--red);
+    }
+
     footer {
       padding: 25px 6%;
       text-align: center;
-      color: var(--muted);
-      background: #0b1710;
-      border-top: 1px solid #284333;
+      color: #999;
+      background: #030303;
+      border-top: 2px solid var(--red-dark);
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    footer span {
+      color: var(--red);
+    }
+
+    @media (max-width: 650px) {
       header {
         padding: 14px 4%;
       }
@@ -193,7 +250,7 @@
 
       nav {
         justify-content: center;
-        gap: 12px;
+        gap: 13px;
       }
 
       nav a {
@@ -201,12 +258,12 @@
       }
 
       section {
-        padding: 42px 5%;
+        padding: 45px 5%;
       }
 
       .panel,
       .feature {
-        padding: 17px;
+        padding: 18px;
       }
     }
   </style>
@@ -234,13 +291,12 @@
     <!-- HOME -->
     <section id="home" class="hero">
       <div class="container">
+        <p class="eyebrow">SP STUDIOS PRESENTS</p>
 
-        <p class="subtitle">SP STUDIOS PRESENTS</p>
-
-        <h1>THE LOST WORLD:<br>PROJECT ZERO</h1>
+        <h1>THE LOST WORLD:<br><span>PROJECT ZERO</span></h1>
 
         <p class="subtitle">
-          Survive the island. Discover the experiment. Defeat the unknown.
+          SURVIVE THE ISLAND. UNCOVER THE TRUTH.
         </p>
 
         <img
@@ -251,7 +307,6 @@
         >
 
         <div class="buttons">
-
           <a class="btn"
              href="https://pranavpvkoottupatha-ai.github.io/Demo-game-/"
              target="_blank"
@@ -259,32 +314,25 @@
             PLAY DEMO
           </a>
 
-          <!-- Clickable trailer hyperlink -->
           <a class="btn btn-outline"
              href="https://yourimageshare.com/ib/iBlKCAP5XQ"
              target="_blank"
              rel="noopener noreferrer">
             WATCH TRAILER
           </a>
-
         </div>
       </div>
     </section>
 
     <!-- TRAILER -->
     <section id="trailer">
-      <div class="container trailer-panel">
-
+      <div class="container">
         <h2>OFFICIAL TRAILER</h2>
 
-        <p class="muted">
-          Enter the world of dinosaurs, survival and Project Zero.
-        </p>
-
-        <div class="panel">
+        <div class="panel" style="text-align:center">
           <p>
-            Watch the official trailer for
-            THE LOST WORLD: PROJECT ZERO.
+            Discover the mysterious island, dangerous dinosaurs
+            and the secrets behind Project Zero.
           </p>
 
           <div class="buttons">
@@ -297,80 +345,73 @@
           </div>
 
           <p class="muted">
-            The trailer opens on YourImageShare in a new tab.
+            Tap the button to open the trailer on YourImageShare.
           </p>
         </div>
-
       </div>
     </section>
 
     <!-- STORY -->
     <section id="story">
       <div class="container">
-
         <h2>THE STORY</h2>
 
         <div class="panel">
           <p>
             The year is 2045. After a passenger plane crashes on a
-            mysterious island, Alex must find a way to survive in a
-            dangerous, unexplored world.
+            mysterious island, Alex must survive in a world filled
+            with dinosaurs and unknown dangers.
           </p>
 
           <p>
-            Dinosaurs roam the island. Abandoned laboratories hide
-            secrets. Strange creatures reveal traces of an experiment
-            known as Project Zero.
+            Abandoned laboratories hide the truth about a secret
+            experiment known as Project Zero. Every discovery brings
+            Alex closer to the mystery behind the island.
           </p>
 
           <p>
-            Explore the island, gather resources and prepare for the
-            final battle. Alex's survival depends on courage,
-            exploration and smart decisions.
+            Explore, collect resources, face dangerous creatures
+            and prepare for the final battle.
           </p>
         </div>
-
       </div>
     </section>
 
     <!-- FEATURES -->
     <section id="features">
       <div class="container">
-
         <h2>GAME FEATURES</h2>
 
         <div class="feature-grid">
-
           <article class="feature">
-            <h3>Dinosaur World</h3>
-            <p>Discover dinosaurs and explore their island habitats.</p>
+            <h3>DINOSAUR WORLD</h3>
+            <p>Explore a mysterious island inhabited by dinosaurs.</p>
           </article>
 
           <article class="feature">
-            <h3>Survival Adventure</h3>
-            <p>Explore, gather resources and prepare for danger.</p>
+            <h3>SURVIVAL</h3>
+            <p>Gather resources and prepare for dangerous encounters.</p>
           </article>
 
           <article class="feature">
-            <h3>Project Zero</h3>
-            <p>Investigate abandoned laboratories and uncover secrets.</p>
+            <h3>PROJECT ZERO</h3>
+            <p>Uncover the secrets of abandoned research laboratories.</p>
           </article>
 
           <article class="feature">
-            <h3>Boss Battles</h3>
-            <p>Prepare your equipment and challenge powerful enemies.</p>
+            <h3>BOSS BATTLES</h3>
+            <p>Prepare for challenging enemies and the final battle.</p>
           </article>
 
           <article class="feature">
-            <h3>Spider Companion</h3>
-            <p>Discover the companion system during your adventure.</p>
+            <h3>SPIDER COMPANION</h3>
+            <p>Discover a companion that can help during your adventure.</p>
           </article>
 
           <article class="feature">
-            <h3>Playable Demo</h3>
-            <p>Launch the demo and experience the available gameplay.</p>
+            <h3>PLAY THE DEMO</h3>
+            <p>Open the available demo and begin your adventure.</p>
           </article>
-
         </div>
       </div>
     </section>
@@ -378,14 +419,12 @@
     <!-- DEMO -->
     <section id="demo">
       <div class="container">
-
         <div class="panel" style="text-align:center">
-
-          <h2>PLAY THE DEMO</h2>
+          <h2 style="border:0;padding:0">ENTER THE LOST WORLD</h2>
 
           <p>
-            Ready to explore THE LOST WORLD: PROJECT ZERO?
-            Start your adventure today.
+            Your adventure begins here. Are you ready to discover
+            the truth behind Project Zero?
           </p>
 
           <div class="buttons">
@@ -396,11 +435,6 @@
               START PLAYING
             </a>
           </div>
-
-          <p class="muted">
-            The demo opens on its own page.
-          </p>
-
         </div>
       </div>
     </section>
@@ -408,28 +442,27 @@
     <!-- CREDITS -->
     <section id="credits">
       <div class="container credits">
-
         <h2>CREDITS</h2>
 
         <div class="panel">
-          <p><strong>Developed by</strong></p>
+          <p><strong>DEVELOPED BY</strong></p>
           <p>SP STUDIOS</p>
 
-          <p><strong>Creators &amp; Developers</strong></p>
+          <p><strong>CREATORS &amp; DEVELOPERS</strong></p>
           <p>Pranav PV and Sidharth Sudheer</p>
 
-          <p><strong>Sponsors</strong></p>
+          <p><strong>SPONSORS</strong></p>
           <p>Nivin MS and Pradev Krishna KP</p>
         </div>
-
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>© 2026 SP STUDIOS. THE LOST WORLD: PROJECT ZERO.</p>
+    <p><span>SP STUDIOS</span> presents THE LOST WORLD: PROJECT ZERO</p>
     <p>Thank you for visiting our world.</p>
+    <p>© 2026 SP STUDIOS</p>
   </footer>
 
 </body>
