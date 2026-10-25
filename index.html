@@ -31,12 +31,12 @@
     }
 
     header {
-      background: #0b1710;
-      border-bottom: 1px solid #284333;
-      padding: 18px 5%;
       position: sticky;
       top: 0;
       z-index: 10;
+      background: #0b1710;
+      border-bottom: 1px solid #284333;
+      padding: 16px 5%;
     }
 
     .header-inner {
@@ -45,8 +45,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
       flex-wrap: wrap;
+      gap: 18px;
     }
 
     .logo {
@@ -75,7 +75,7 @@
 
     section {
       padding: 60px 6%;
-      scroll-margin-top: 90px;
+      scroll-margin-top: 100px;
     }
 
     .container {
@@ -94,7 +94,8 @@
       line-height: 1.15;
     }
 
-    .subtitle, .muted {
+    .subtitle,
+    .muted {
       color: var(--muted);
     }
 
@@ -127,6 +128,7 @@
       border: 1px solid var(--green);
       border-radius: 7px;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     .btn:hover {
@@ -144,24 +146,12 @@
       font-size: clamp(25px, 4vw, 36px);
     }
 
-    .panel, .feature {
+    .panel,
+    .feature {
       background: var(--panel);
       border: 1px solid #263e2e;
       border-radius: 12px;
       padding: 24px;
-    }
-
-    .trailer-frame {
-      background: #000;
-      border: 1px solid #34533e;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      overflow-wrap: anywhere;
-    }
-
-    .YISEmbed a {
-      color: var(--green);
     }
 
     .feature-grid {
@@ -173,6 +163,10 @@
     .feature h3 {
       color: var(--green);
       margin-top: 0;
+    }
+
+    .trailer-panel {
+      text-align: center;
     }
 
     .credits {
@@ -210,7 +204,8 @@
         padding: 42px 5%;
       }
 
-      .panel, .feature {
+      .panel,
+      .feature {
         padding: 17px;
       }
     }
@@ -236,8 +231,10 @@
 
   <main>
 
+    <!-- HOME -->
     <section id="home" class="hero">
       <div class="container">
+
         <p class="subtitle">SP STUDIOS PRESENTS</p>
 
         <h1>THE LOST WORLD:<br>PROJECT ZERO</h1>
@@ -254,6 +251,7 @@
         >
 
         <div class="buttons">
+
           <a class="btn"
              href="https://pranavpvkoottupatha-ai.github.io/Demo-game-/"
              target="_blank"
@@ -261,81 +259,88 @@
             PLAY DEMO
           </a>
 
-          <!-- Clickable WATCH TRAILER hyperlink -->
+          <!-- Clickable trailer hyperlink -->
           <a class="btn btn-outline"
              href="https://yourimageshare.com/ib/iBlKCAP5XQ"
              target="_blank"
              rel="noopener noreferrer">
             WATCH TRAILER
           </a>
+
         </div>
       </div>
     </section>
 
+    <!-- TRAILER -->
     <section id="trailer">
-      <div class="container">
+      <div class="container trailer-panel">
+
         <h2>OFFICIAL TRAILER</h2>
 
         <p class="muted">
           Enter the world of dinosaurs, survival and Project Zero.
         </p>
 
-        <div class="trailer-frame">
-          <blockquote class="YISEmbed" data-id="iBlKCAP5XQ">
-            <a href="https://yourimageshare.com/ib/iBlKCAP5XQ"
+        <div class="panel">
+          <p>
+            Watch the official trailer for
+            THE LOST WORLD: PROJECT ZERO.
+          </p>
+
+          <div class="buttons">
+            <a class="btn"
+               href="https://yourimageshare.com/ib/iBlKCAP5XQ"
                target="_blank"
                rel="noopener noreferrer">
-              Watch THE LOST WORLD: PROJECT ZERO trailer
+              WATCH TRAILER NOW
             </a>
-          </blockquote>
+          </div>
+
+          <p class="muted">
+            The trailer opens on YourImageShare in a new tab.
+          </p>
         </div>
 
-        <div class="buttons">
-          <a class="btn"
-             href="https://yourimageshare.com/ib/iBlKCAP5XQ"
-             target="_blank"
-             rel="noopener noreferrer">
-            OPEN TRAILER
-          </a>
-        </div>
-
-        <p class="muted">
-          If the trailer does not load here, tap OPEN TRAILER.
-        </p>
       </div>
     </section>
 
+    <!-- STORY -->
     <section id="story">
       <div class="container">
+
         <h2>THE STORY</h2>
 
         <div class="panel">
           <p>
-            The year is 2045. After a passenger plane crashes on a mysterious
-            island, Alex must find a way to survive in a dangerous,
-            unexplored world.
+            The year is 2045. After a passenger plane crashes on a
+            mysterious island, Alex must find a way to survive in a
+            dangerous, unexplored world.
           </p>
 
           <p>
-            Dinosaurs roam the island. Abandoned laboratories hide secrets.
-            Strange creatures reveal traces of an experiment known as
-            Project Zero.
+            Dinosaurs roam the island. Abandoned laboratories hide
+            secrets. Strange creatures reveal traces of an experiment
+            known as Project Zero.
           </p>
 
           <p>
-            Explore the island, gather resources and prepare for the final
-            battle. Alex's survival depends on courage, exploration and
-            smart decisions.
+            Explore the island, gather resources and prepare for the
+            final battle. Alex's survival depends on courage,
+            exploration and smart decisions.
           </p>
         </div>
+
       </div>
     </section>
 
+    <!-- FEATURES -->
     <section id="features">
       <div class="container">
+
         <h2>GAME FEATURES</h2>
 
         <div class="feature-grid">
+
           <article class="feature">
             <h3>Dinosaur World</h3>
             <p>Discover dinosaurs and explore their island habitats.</p>
@@ -365,13 +370,17 @@
             <h3>Playable Demo</h3>
             <p>Launch the demo and experience the available gameplay.</p>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- DEMO -->
     <section id="demo">
       <div class="container">
+
         <div class="panel" style="text-align:center">
+
           <h2>PLAY THE DEMO</h2>
 
           <p>
@@ -388,13 +397,18 @@
             </a>
           </div>
 
-          <p class="muted">The demo opens on its own page.</p>
+          <p class="muted">
+            The demo opens on its own page.
+          </p>
+
         </div>
       </div>
     </section>
 
+    <!-- CREDITS -->
     <section id="credits">
       <div class="container credits">
+
         <h2>CREDITS</h2>
 
         <div class="panel">
@@ -407,6 +421,7 @@
           <p><strong>Sponsors</strong></p>
           <p>Nivin MS and Pradev Krishna KP</p>
         </div>
+
       </div>
     </section>
 
@@ -416,9 +431,6 @@
     <p>© 2026 SP STUDIOS. THE LOST WORLD: PROJECT ZERO.</p>
     <p>Thank you for visiting our world.</p>
   </footer>
-
-  <!-- YourImageShare embed script -->
-  <script src="https://yourimageshare.com/embed.js"></script>
 
 </body>
 </html>
